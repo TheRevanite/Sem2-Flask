@@ -2,20 +2,21 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8"> 
-	<title>Top Colors Finder</title>
+	<title>Colorizer</title>
+    <link rel="icon" href="https://www.w3schools.com/colors/img_colormap.gif" type="image/x-icon"/>,
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
 <body> 
 	<header> 
-        <h1>Welcome to Image Colour Palette Generator</h1> 
+        <h1>Welcome to Colorizer</h1> 
         <p> 
-            Upload an image and this site will tell you the top 10 most used colors along with their hex codes. 
-            If two colors appear the same number of times, both will be shown here. 
+            
+Simply upload an image, and this website will promptly generate a report detailing the ten most frequently used colors within it, complete with their corresponding hex codes. In the event of a tie between two colors in terms of usage frequency, both will be showcased in the analysis, ensuring a comprehensive overview of the predominant hues present in your image.
         </p> 
     </header>
 	<form action = "/" method = "POST" enctype = "multipart/form-data"> 
-		<input type = "file" name = "file" required /> 
+		<input type = "file" class="choose-file" name = "file" required /> 
 		<br> 
-		Select a Colour Code: 
+		<h2>Select a Colour Code:</h2> 
         <select name="colour_code" required>
             <option value="" disabled selected>Select an option.</option>
             <option value="rgb">RGB</option>
