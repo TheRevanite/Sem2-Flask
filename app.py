@@ -7,7 +7,7 @@ app = Flask(__name__)
 def rgb_to_hex(rgb):
     return '%02x%02x%02x' % rgb
 
-def give_most_hex(file_path, code):
+def extract_top_colors(file_path, code):
     my_image = Image.open(file_path).convert('RGB')
     size = my_image.size
     
@@ -53,7 +53,7 @@ def index():
     if request.method == 'POST':
         f = request.files['file']
         colour_code = request.form['colour_code']
-        colours = give_most_hex(f.stream, colour_code)
+        colours = extract_top_colors(f.stream, colour_code)
         colors_list = {'code': colour_code, 'colors': colours}
     
     return render_template('index.html', colors_list=colors_list)
